@@ -1,0 +1,75 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    h1 {
+      font-size: 10vw;
+      color: black;
+      text-align: center;
+      text-transform: none;
+
+      span {
+        color: red;
+      }
+
+      .oText {
+        color: orange;
+      }
+    }
+
+    p {
+      font-size: 4.3vw;
+      line-height: 4.5vw;
+      padding: 0 8vw;
+      margin-bottom: 7vw;
+      text-align: center;
+    }
+
+    .mImg {
+      height: 50vw;
+      width: 84%;
+      margin: 6vw 8vw;
+      border-radius: 2vw;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+@media (min-width: 1020px) {
+  .hero {
+    padding: 0 4vw;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 3vw;
+      margin-bottom: 4vw;
+
+      h1 {
+        font-size: 6vw;
+        text-align: left;
+      }
+
+      img {
+        display: none;
+      }
+
+      p {
+        font-size: 1.5vw;
+        line-height: 1;
+        padding: 0;
+        width: 75%;
+        margin: 1vw 0;
+        margin-bottom: 6.5vw;
+        text-align: left;
+      }
+    }
+  }
+}
