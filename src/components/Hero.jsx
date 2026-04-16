@@ -28,7 +28,7 @@ const Hero = () => {
           </NavLink>
         </div>
       </div>
-      <img className=".dImg hidden xl:block h-[40vw] w-[30vw] bg-center object-cover rounded-[2vw]" src="https://images.pexels.com/photos/28371797/pexels-photo-28371797.jpeg" alt="" />
+      <img className=".dImg hidden lg:block xl:block h-[40vw] w-[30vw] bg-center object-cover rounded-[2vw]" src="https://images.pexels.com/photos/28371797/pexels-photo-28371797.jpeg" alt="" />
     </div>
   );
 };

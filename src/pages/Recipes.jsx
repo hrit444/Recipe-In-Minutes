@@ -1,10 +1,11 @@
 import { useContext, useMemo } from "react";
 import RecipeCard from "../components/RecipeCard";
 import { recipeContext } from "../context/RecipeContext";
+import { RecipeGridSkeleton } from "../components/SkeletonUI";
 import "../pages/Recipes.css"
 
 const Recipes = () => {
-  const { recipe, searchQuery } = useContext(recipeContext);
+  const { recipe, searchQuery, isHydrating } = useContext(recipeContext);
 
   const filteredRecipes = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
@@ -26,6 +27,10 @@ const Recipes = () => {
   const renderRecipes = filteredRecipes.map((recp) => (
     <RecipeCard key={recp.id} recipe={recp} />
   ));
+
+  if (isHydrating) {
+    return <RecipeGridSkeleton />;
+  }
 
   return (
     <div className="p-3 lg:p-[1.2vw] min-h-screen grid gap-[2vw] grid-cols-2 md:grid-cols-2 lg:grid-cols-5">

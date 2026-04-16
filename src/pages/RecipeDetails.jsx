@@ -3,15 +3,20 @@ import { useNavigate, useParams } from "react-router-dom";
 import { recipeContext } from "../context/RecipeContext";
 import "./RecipeDetails.css";
 import { toast } from "react-toastify";
+import { RecipeDetailsSkeleton } from "../components/SkeletonUI";
 
 const RecipeDetails = () => {
   // const { setRecipe } = useContext(recipeContext);
 
-  const { recipe, setRecipe } = useContext(recipeContext);
+  const { recipe, setRecipe, isHydrating } = useContext(recipeContext);
   const params = useParams();
   const recp = recipe.find((recp) => String(recp.id) === String(params.id));
   // const recp = recipe.find((recp) => recp.id === params.id);
   const navigate = useNavigate();
+
+  if (isHydrating) {
+    return <RecipeDetailsSkeleton />;
+  }
 
   if (!recp) {
     return <h2 className="p-5 text-center">Recipe not found!</h2>;

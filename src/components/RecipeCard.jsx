@@ -81,7 +81,7 @@ const RecipeCard = ({ recipe }) => {
           }}
           className="my-btn"
         >
-          <h6 className="hidden xl:inline lg:inline xl:text-[1.1vw]">Menu</h6>
+          <h6 className="hidden text-white xl:inline lg:inline xl:text-[1.1vw]">Menu</h6>
           <i className="ri-arrow-right-up-line text-white text-[5vw] lg:text-[1.5vw]"></i>
         </button>
       </div>

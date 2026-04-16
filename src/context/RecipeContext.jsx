@@ -323,11 +323,12 @@ const RecipeContext = (props) => {
   ]);
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [isHydrating, setIsHydrating] = useState(true);
 
   useEffect(() => {
     const storedRecipes = localStorage.getItem("recipes");
-    if (storedRecipes) {
-      try {
+    try {
+      if (storedRecipes) {
         const parsed = JSON.parse(storedRecipes);
         if (Array.isArray(parsed)) {
           const merged = [
@@ -338,9 +339,11 @@ const RecipeContext = (props) => {
           ];
           setRecipe(merged);
         }
-      } catch (err) {
-        console.error("Error parsing localStorage recipes:", err);
       }
+    } catch (err) {
+      console.error("Error parsing localStorage recipes:", err);
+    } finally {
+      setIsHydrating(false);
     }
   }, []);
 
@@ -349,7 +352,15 @@ const RecipeContext = (props) => {
   }, [recipe]);
 
   return (
-    <recipeContext.Provider value={{ recipe, setRecipe, searchQuery, setSearchQuery }}>
+    <recipeContext.Provider
+      value={{
+        recipe,
+        setRecipe,
+        searchQuery,
+        setSearchQuery,
+        isHydrating,
+      }}
+    >
       {props.children}
     </recipeContext.Provider>
   );

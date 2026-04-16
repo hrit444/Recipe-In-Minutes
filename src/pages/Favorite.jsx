@@ -1,8 +1,11 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import RecipeCard from "../components/RecipeCard";
 import { useNavigate } from "react-router";
+import { recipeContext } from "../context/RecipeContext";
+import { RecipeGridSkeleton } from "../components/SkeletonUI";
 
 const Favorite = () => {
+  const { isHydrating } = useContext(recipeContext);
   const fav = JSON.parse(localStorage.getItem("fav")) || []
 
   const navigate = useNavigate()
@@ -12,6 +15,10 @@ const Favorite = () => {
   ));
 
   useEffect(() => {}, []);
+
+  if (isHydrating) {
+    return <RecipeGridSkeleton count={6} />;
+  }
 
   return (
     <div className="p-3 lg:p-[1.2vw] min-h-screen grid gap-[2vw] grid-cols-2 md:grid-cols-2 lg:grid-cols-5">
