@@ -2,8 +2,9 @@
 
 @font-face {
     font-family: gil;
-    src: url(/Font/Gilroy-Medium.ttf);
+    src: url(/Font/Gilroy-Medium.woff2);
 }
+
 *{
     font-family: gil;
 }
