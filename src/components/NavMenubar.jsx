@@ -1,14 +1,20 @@
 import { NavLink } from "react-router-dom"
 import "./NavMenubar.css";
 
-const NavMenubar = () => {
+const NavMenubar = ({ setActive }) => {
   
-  const closeHandler = (setActive)=>{
+  const closeHandler = () => {
     setActive(false)
   }
 
+  const handleBackdropClick = (e) => {
+    if (e.target === e.currentTarget) {
+      setActive(false)
+    }
+  }
+
   return (
-    <div className="bg-[#7b7b7b48] w-[100vw] h-[100vh] fixed top-0 left-[0] z-999999">
+    <div className="bg-[#7b7b7b48] w-[100vw] h-[100vh] fixed top-0 left-0 z-50" onClick={handleBackdropClick}>
       <div className="nav-menu bg-[#F56607] h-[45%] flex flex-col px-[4vw] pb-[8vw]">
         <NavLink onClick={closeHandler} className="nText mt-[10vw]" to="/">Home</NavLink>
         <NavLink onClick={closeHandler} className="nText" to="/recipes">Recipes</NavLink>

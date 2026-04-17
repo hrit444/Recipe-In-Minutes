@@ -3,7 +3,7 @@ import "./Hero.css";
 
 const Hero = () => {
   return (
-    <div className="hero bg-[#FBF6EC] h-screen w-screen overflow-hidden">
+    <div className="hero bg-[#FBF6EC] min-h-[80vh] w-screen flex flex-col lg:flex-row items-center justify-center gap-[5vw] px-[4vw] py-[8vw] lg:py-[5vw]">
       <div className="text">
         <h1>
           Healthy <span>Eating is </span> <br className="inline lg:hidden" />{" "}

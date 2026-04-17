@@ -33,8 +33,8 @@ const Recipes = () => {
   }
 
   return (
-    <div className="p-3 lg:p-[1.2vw] min-h-screen grid gap-[2vw] grid-cols-2 md:grid-cols-2 lg:grid-cols-5">
-      {filteredRecipes.length > 0 ? renderRecipes : (<h2 className="notfound">No recipes found. Try a different search or create a recipe first.</h2>)}
+    <div className="p-3 lg:p-[1.2vw] grid gap-[2vw] grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      {filteredRecipes.length > 0 ? renderRecipes : (<h2 className="notfound">No recipes found.</h2>)}
     </div>
   );
 };

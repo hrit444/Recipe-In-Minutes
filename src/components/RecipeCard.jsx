@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../components/RecipeCard.css";
 import { useNavigate } from "react-router-dom";
 
@@ -16,31 +16,6 @@ const RecipeCard = ({ recipe }) => {
     image,
   } = recipe;
 
-  // const [favorite, setFavorite] = useState(JSON.parse(localStorage.getItem("fav")) || []);
-
-  // const FavHandler = () => {
-  //   let copyfav = [...favorite];
-  //   copyfav.push(recipe);
-  //   setFavorite(copyfav);
-  //   localStorage.setItem("fav", JSON.stringify(copyfav));
-  // };
-
-  // const UnFavHandler = () => {
-  //   const filterfav = favorite.filter((f) => f.id != recipe?.id);
-  //   setFavorite(filterfav);
-  //   localStorage.setItem("fav", JSON.stringify(filterfav));
-  // };
-
-  // useEffect(() => {
-  //   console.log("hello");
-  //   ()=>{
-  //     console.log("hi");
-      
-  //   }
-  // }, []);
-
-  // const isFav = favorite.find((f) => f.id == recipe?.id)
-
   useEffect(()=>{},[])
 
   return (
@@ -50,14 +25,6 @@ const RecipeCard = ({ recipe }) => {
         style={{ backgroundImage: `url(${image})` }}
         alt=""
       >
-        {/* { isFav ? (
-          <i onClick={UnFavHandler} className="ri-heart-3-fill bg-white text-red-400 rounded-full h-[7vw] w-[7vw] lg:h-[2.5vw] lg:w-[2.5vw] lg:text-[1.5vw] flex items-center justify-center mt-[1vw] mr-[1vw] lg:mt-[.5vw] lg:mr-[.5vw]" />
-        ) : (
-          <i
-            onClick={FavHandler}
-            className="ri-heart-line bg-white rounded-full h-[7vw] w-[7vw] lg:h-[2.5vw] lg:w-[2.5vw] lg:text-[1.5vw] flex items-center justify-center mt-[1vw] mr-[1vw] lg:mt-[.5vw] lg:mr-[.5vw]"
-          ></i>
-        )} */}
       </div>
       <h2>{name}</h2>
       <div className="fewdetails">

@@ -33,7 +33,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-[#F56607] top-0 z-9999999 fixed w-full flex items-center text-[1.2vw] justify-between gap-4 p-3 py-[3vw] lg:px-[1.5vw] lg:py-[1vw]">
+      <nav className="bg-[#F56607] top-0 z-40 fixed w-full flex items-center text-[1.2vw] 
+      z-99
+      justify-between gap-4 p-3 py-[3vw] lg:px-[1.5vw] lg:py-[1vw]">
         {showSearch ? (
           <div className="flex items-center w-full gap-3">
             
@@ -43,7 +45,7 @@ const Navbar = () => {
               onChange={handleSearchChange}
               autoFocus
               placeholder="Search recipes..."
-              className="flex-1 max-w-screen-90 mx-auto px-4 py-2 rounded-full text-black text-[4vw] lg:text-[1.5 vw] outline-none"
+              className="flex-1 max-w-screen-90 mx-auto px-4 py-1 rounded-full text-white text-[4vw] lg:text-[1.5vw] outline-none"
             />
             <i
               className="ri-close-line text-white text-[7vw] lg:text-[2vw] cursor-pointer xl:mr-[4vw] 2xl:mr-[5vw]"
@@ -54,7 +56,7 @@ const Navbar = () => {
           <>
             <i
               onClick={MenuOpener}
-              className="ri-menu-line absolute z-9999999 lg:hidden text-white text-[5.5vw] lg:text-[2vw]"
+              className="ri-menu-line absolute z-40 lg:hidden text-white text-[5.5vw] lg:text-[2vw]"
             ></i>
             <div className="initial lg:hidden"></div>
             <NavLink className="d-logo text-white hidden lg:inline" to="/">
