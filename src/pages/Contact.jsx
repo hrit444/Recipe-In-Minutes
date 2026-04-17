@@ -20,8 +20,8 @@ const Contact = () => {
 
   return (
     <div className="contact w-full px-[4vw] bg-[#fbf6ec] pt-[2vw] grid lg:pt-[1vw] lg:h-[90vh]">
-      <div className="heading h-fit py-0 lg:px-[2vw]  lg:flex lg:flex-col lg:justify-between">
-        <h1 className="text-[14vw] text-left text-black my-[5vw] mb-[8vw] lg:text-[6vw] lg:font-light lg:tracking-[-0.3vw] lg:my-[2vw]">
+      <div className="heading h-fit py-0 lg:px-[2vw] lg:flex lg:flex-col lg:justify-between">
+        <h1 className="text-[14vw] text-center lg:text-left xl:text-left text-black my-[5vw] mb-[8vw] lg:text-[6vw] lg:font-light lg:tracking-[-0.3vw] lg:my-[2vw]">
           Get in touch
         </h1>
       </div>
